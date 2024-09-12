@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import cv2
 import numpy as np
 import torch
@@ -7,6 +8,7 @@ import os
 import uuid
 
 app = Flask(__name__)
+CORS(app)
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
@@ -173,4 +175,4 @@ def apply_effect():
 if __name__ == '__main__':
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     os.makedirs(PROCESSED_FOLDER, exist_ok=True)
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
