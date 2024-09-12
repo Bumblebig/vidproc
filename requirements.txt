@@ -1,6 +1,6 @@
-Flask==2.3.2
-opencv-python==4.8.0.74
-numpy==1.24.3
-torch==2.0.1
+Flask
+opencv-python
+numpy
+torch
 sam2
 uuid
